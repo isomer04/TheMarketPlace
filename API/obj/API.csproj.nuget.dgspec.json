@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\isome\\Desktop\\csharp\\TheMarketPlace\\API\\API.csproj": {}
+    "c:\\Users\\isome\\Desktop\\csharp\\TheMarketPlace\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\isome\\Desktop\\csharp\\TheMarketPlace\\API\\API.csproj": {
+    "c:\\Users\\isome\\Desktop\\csharp\\TheMarketPlace\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\isome\\Desktop\\csharp\\TheMarketPlace\\API\\API.csproj",
+        "projectUniqueName": "c:\\Users\\isome\\Desktop\\csharp\\TheMarketPlace\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\isome\\Desktop\\csharp\\TheMarketPlace\\API\\API.csproj",
+        "projectPath": "c:\\Users\\isome\\Desktop\\csharp\\TheMarketPlace\\API\\API.csproj",
         "packagesPath": "C:\\Users\\isome\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\isome\\Desktop\\csharp\\TheMarketPlace\\API\\obj\\",
+        "outputPath": "c:\\Users\\isome\\Desktop\\csharp\\TheMarketPlace\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\isome\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -21,8 +21,6 @@
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,6 +38,16 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
