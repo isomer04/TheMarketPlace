@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\isome\\Desktop\\csharp\\TheMarketPlace\\API\\API.csproj": {}
+    "C:\\Users\\isome\\Desktop\\csharp\\TheMarketPlace\\API\\API.csproj": {}
   },
   "projects": {
-    "c:\\Users\\isome\\Desktop\\csharp\\TheMarketPlace\\API\\API.csproj": {
+    "C:\\Users\\isome\\Desktop\\csharp\\TheMarketPlace\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\isome\\Desktop\\csharp\\TheMarketPlace\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\isome\\Desktop\\csharp\\TheMarketPlace\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "c:\\Users\\isome\\Desktop\\csharp\\TheMarketPlace\\API\\API.csproj",
+        "projectPath": "C:\\Users\\isome\\Desktop\\csharp\\TheMarketPlace\\API\\API.csproj",
         "packagesPath": "C:\\Users\\isome\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\isome\\Desktop\\csharp\\TheMarketPlace\\API\\obj\\",
+        "outputPath": "C:\\Users\\isome\\Desktop\\csharp\\TheMarketPlace\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\isome\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -21,6 +21,8 @@
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,12 +42,14 @@
           "targetAlias": "net7.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[7.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[7.0.7, )"
             }
           },
           "imports": [
