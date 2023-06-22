@@ -6,7 +6,7 @@ namespace API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")] // GET /api/users
-    public class BaseApiController
+    public class BaseApiController: ControllerBase
     {
         
     }
