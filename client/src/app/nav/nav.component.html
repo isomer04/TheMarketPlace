@@ -1,51 +1,58 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#">The Marketplace</a>
-      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <div class="container">
+    <a class="navbar-brand" href="#">The Marketplace</a>
+    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button> -->
-      <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="loggedIn">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Matches</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Lists</a>
-          </li>
+    <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="loggedIn">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Matches</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Lists</a>
+      </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="#">Messages</a>
-          </li>
-          <li class="nav-item" (click) ="logout()">
-            <a class="nav-link">Logout</a>
-          </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Messages</a>
+      </li>
+    </ul>
 
-         <div class="dropdown" *ngIf="loggedIn">
-            <a class="dropdown-toggle text-light">Welcome user</a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item">Edit Profile</a>
-                <a class="dropdown-item" (click)="logout()">Logout</a> 
-            </div>
-         </div>
-         
-        </ul>
-        <form *ngIf="!loggedIn" #loginForm ="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">
-          <input 
-          name = "username"
-          [(ngModel)] = "model.username"
-          class="form-control me-2" 
-          type="text" 
-          placeholder="Username">
-
-          <input 
-          name = "password"
-          [(ngModel)] = "model.password"
-          class="form-control me-2" 
-          type="password" 
-          placeholder="Password">
-
-          <button class="btn btn-outline-success" type="submit">Login</button>
-        </form>
-      <!-- </div> -->
+    <div class="dropdown" *ngIf="loggedIn" dropdown>
+      <a class="dropdown-toggle text-light text-decoration-none" dropdownToggle
+        >Welcome user</a
+      >
+      <div class="dropdown-menu" *dropdownMenu>
+        <a class="dropdown-item">Edit Profile</a>
+        <a class="dropdown-item" (click)="logout()">Logout</a>
+      </div>
     </div>
-  </nav>
+
+    <form
+      *ngIf="!loggedIn"
+      #loginForm="ngForm"
+      class="d-flex"
+      (ngSubmit)="login()"
+      autocomplete="off"
+    >
+      <input
+        name="username"
+        [(ngModel)]="model.username"
+        class="form-control me-2"
+        type="text"
+        placeholder="Username"
+      />
+
+      <input
+        name="password"
+        [(ngModel)]="model.password"
+        class="form-control me-2"
+        type="password"
+        placeholder="Password"
+      />
+
+      <button class="btn btn-outline-success" type="submit">Login</button>
+    </form>
+    <!-- </div> -->
+  </div>
+</nav>
