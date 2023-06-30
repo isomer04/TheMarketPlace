@@ -1,21 +1,34 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" routerLink="/" routerLinkActive="active">The Marketplace</a>
+    <a class="navbar-brand" routerLink="/" routerLinkActive="active"
+      >The Marketplace</a
+    >
     <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button> -->
     <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <li class="nav-item">
-        <a class="nav-link active"  routerLink="/members" routerLinkActive="active">Matches</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/lists" routerLinkActive="active">Lists</a>
-      </li>
+      <ng-container *ngIf="accountService.currentUser$ | async">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            routerLink="/members"
+            routerLinkActive="active"
+            >Matches</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/lists" routerLinkActive="active"
+            >Lists</a
+          >
+        </li>
 
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/messages" routerLinkActive="active">Messages</a>
-      </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/messages" routerLinkActive="active"
+            >Messages</a
+          >
+        </li>
+      </ng-container>
     </ul>
 
     <div class="dropdown" *ngIf="accountService.currentUser$ | async" dropdown>
