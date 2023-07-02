@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-    public class BuggyController: BaseApiController
+    public class BuggyController : BaseApiController
     {
         private readonly DataContext _context;
         public BuggyController(DataContext context)
@@ -28,8 +28,8 @@ namespace API.Controllers
         [HttpGet("not-found")]
         public ActionResult<AppUser> GetNotFound()
         {
-            var thing =  _context.Users.Find(-1);
-            if(thing == null) return NotFound();
+            var thing = _context.Users.Find(-1);
+            if (thing == null) return NotFound();
 
             return thing;
         }
@@ -37,11 +37,13 @@ namespace API.Controllers
         [HttpGet("server-error")]
         public ActionResult<string> GetServerError()
         {
-            var thing =  _context.Users.Find(-1);
+
+            var thing = _context.Users.Find(-1);
 
             var thingsToReturn = thing.ToString();
 
             return thingsToReturn;
+
         }
 
         [HttpGet("bad-request")]
@@ -49,7 +51,7 @@ namespace API.Controllers
         {
             return BadRequest("This was not a good request");
         }
-        
+
 
 
 
