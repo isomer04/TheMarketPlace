@@ -6,23 +6,24 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AuthGuard } from './_guards/auth.guard';
+import { TestErrorComponent } from './errors/test-error/test-error.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: '',
-  runGuardsAndResolvers: 'always',
-  canActivate: [AuthGuard],
-  children: [
-    {path: 'members', component: MemberListComponent},
-    {path: 'members/:id', component: MemberDetailComponent},
-    {path: 'lists', component: ListsComponent},
-    {path: 'messages', component: MessagesComponent},
+  { path: '', component: HomeComponent },
+  {
+    path: '',
+    runGuardsAndResolvers: 'always',
+    canActivate: [AuthGuard],
+    children: [
+      { path: 'members', component: MemberListComponent },
+      { path: 'members/:id', component: MemberDetailComponent },
+      { path: 'lists', component: ListsComponent },
+      { path: 'messages', component: MessagesComponent },
 
-  ]
-},
-{path: '**', component: HomeComponent, pathMatch: 'full'}
-
-  
+    ]
+  },
+  { path: 'errors', component: TestErrorComponent },
+  { path: '**', component: HomeComponent, pathMatch: 'full' }
 ];
 
 @NgModule({
