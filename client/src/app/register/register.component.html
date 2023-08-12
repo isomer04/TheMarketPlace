@@ -19,18 +19,18 @@
     [label]="'Username'">  </app-text-input>
   <app-text-input [formControl] = "$any(registerForm.controls['knownAs'])" 
   [label]="'Known As'">  </app-text-input>  
-  <app-text-input [formControl] = "$any(registerForm.controls['dateOfBirth'])" [label]="'Date of Birth'">  </app-text-input>
+  <app-text-input [formControl] = "$any(registerForm.controls['dateOfBirth'])" [label]="'Date of Birth'" [type]="'date'">  </app-text-input>
   <app-text-input [formControl] = "$any(registerForm.controls['city'])" [label]="'City'">  </app-text-input>
   <app-text-input [formControl] = "$any(registerForm.controls['country'])" [label]="'Country'">  </app-text-input>
 
-    <app-text-input [formControl] = "$any(registerForm.controls['password'])" [label]="'Password'" type="'password'">
+  <app-text-input [formControl] = "$any(registerForm.controls['password'])" [label]="'Password'" type="'password'">
 
-    </app-text-input>
+  </app-text-input>
 
 
-    <app-text-input [formControl] = "$any(registerForm.controls['confirmPassword'])" [label]="'Confirm Password'" type="'password'">
+  <app-text-input [formControl] = "$any(registerForm.controls['confirmPassword'])" [label]="'Confirm Password'" type="'password'">
 
-    </app-text-input>
+  </app-text-input>
 
 
   <div class="text-center">
