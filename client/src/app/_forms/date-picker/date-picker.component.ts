@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Self } from '@angular/core';
+import { Component, Input, Self } from '@angular/core';
 import { ControlValueAccessor, FormControl, NgControl } from '@angular/forms';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 
@@ -8,7 +8,6 @@ import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
   styleUrls: ['./date-picker.component.css']
 })
 export class DatePickerComponent implements ControlValueAccessor {
-
   @Input() label = '';
   @Input() maxDate: Date | undefined;
   bsConfig: Partial<BsDatepickerConfig> | undefined;
@@ -17,27 +16,20 @@ export class DatePickerComponent implements ControlValueAccessor {
     this.ngControl.valueAccessor = this;
     this.bsConfig = {
       containerClass: 'theme-red',
-      dateInputFormat : 'DD MMMM YYYY'
+      dateInputFormat: 'DD MMMM YYYY',
     }
-
-   }
-
-  writeValue(obj: any): void {
-    throw new Error('Method not implemented.');
   }
 
+  writeValue(obj: any): void {
+  }
 
   registerOnChange(fn: any): void {
-    throw new Error('Method not implemented.');
   }
 
   registerOnTouched(fn: any): void {
-    throw new Error('Method not implemented.');
   }
 
-
-  getControl(): FormControl{
-    return this.ngControl.control as FormControl
+  get control(): FormControl {
+    return this.ngControl.control as FormControl;
   }
-
 }

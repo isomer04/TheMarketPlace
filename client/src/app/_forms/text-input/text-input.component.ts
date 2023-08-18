@@ -7,14 +7,12 @@ import { ControlValueAccessor, FormControl, NgControl } from '@angular/forms';
   styleUrls: ['./text-input.component.css']
 })
 export class TextInputComponent implements ControlValueAccessor {
-
   @Input() label = '';
   @Input() type = 'text';
 
-  constructor(@Self() public ngControl: NgControl) {
+  constructor(@Self() public ngControl: NgControl) { 
     this.ngControl.valueAccessor = this;
-   }
-
+  }
 
   writeValue(obj: any): void {
   }
@@ -28,5 +26,4 @@ export class TextInputComponent implements ControlValueAccessor {
   get control(): FormControl {
     return this.ngControl.control as FormControl
   }
-  
 }
