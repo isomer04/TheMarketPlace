@@ -13,8 +13,8 @@ export class MemberListComponent implements OnInit {
   // members$: Observable<Member[]> | undefined;
   members: Member[] = [];
   pagination: Pagination | undefined;
-  pageNumber = 1;
-  pageSize: 5 | undefined;
+  pageNumber = 2;
+  pageSize: 1 | undefined;
 
   constructor(private memberService: MembersService) { }
 
@@ -32,6 +32,13 @@ export class MemberListComponent implements OnInit {
         }
       }
     })
+  }
+
+  pageChanged(event: any) {
+    if(this.pageNumber !== event.page){
+      this.pageNumber = event.page;
+      this.loadMembers();
+    }
   }
 
 
