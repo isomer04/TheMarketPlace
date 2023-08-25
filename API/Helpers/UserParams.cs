@@ -3,9 +3,8 @@ namespace API.Helpers
     public class UserParams
     {
         private const int MaxPageSize = 50;
-        public int pageNumber { get; set; }  = 1;
-
-        private int _pageSize = 10;
+        public int PageNumber { get; set; } = 1;
+        private int _pageSize = 10; 
 
         public int PageSize
         {
@@ -15,6 +14,9 @@ namespace API.Helpers
 
         public string CurrentUserName { get; set; }
         public string Gender { get; set; }
+
+        public int MinAge { get; set; } = 18;
+        public int MaxAge { get; set; } = 100;
         
     }
 }
