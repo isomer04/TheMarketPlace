@@ -5,13 +5,14 @@ import { NgxGalleryAnimation, NgxGalleryImage, NgxGalleryModule, NgxGalleryOptio
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { Member } from 'src/app/_models/member';
 import { MembersService } from 'src/app/_services/members.service';
+import { MemberMessagesComponent } from '../member-messages/member-messages.component';
 
 @Component({
   selector: 'app-member-detail',
-  // standalone: true,
+  standalone: true,
   templateUrl: './member-detail.component.html',
   styleUrls: ['./member-detail.component.css'],
-  // imports: [CommonModule. TabsModule, GalleryModule, TimeagoModule]
+  imports: [CommonModule. TabsModule, GalleryModule, TimeagoModule, MemberMessagesComponent]
 })
 export class MemberDetailComponent implements OnInit {
   member: Member | undefined;
@@ -24,6 +25,7 @@ export class MemberDetailComponent implements OnInit {
   constructor(private memberService: MembersService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+
     this.loadMember();
 
     this.galleryOptions = [
