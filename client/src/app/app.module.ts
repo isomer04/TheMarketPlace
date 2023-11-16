@@ -33,7 +33,6 @@ import { DatePickerComponent } from './_forms/date-picker/date-picker.component'
     HomeComponent,
     RegisterComponent,
     MemberListComponent,
-    MemberDetailComponent,
     ListsComponent,
     MessagesComponent,
     TestErrorComponent,
