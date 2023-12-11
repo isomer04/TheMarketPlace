@@ -11,6 +11,7 @@ import { Message } from 'src/app/_models/message';
 import { AccountService } from 'src/app/_services/account.service';
 import { User } from 'src/app/_models/user';
 import { take } from 'rxjs';
+import { PresenceService } from 'src/app/_services/presence.service';
 
 @Component({
   selector: 'app-member-detail',
@@ -28,7 +29,7 @@ export class MemberDetailComponent implements OnInit, OnDestroy {
   user?: User;
 
   constructor( private route: ActivatedRoute,
-    private messageService: MessageService, private accountService: AccountService) {
+    private messageService: MessageService, private accountService: AccountService, public presenceService: PresenceService) {
     this.accountService.currentUser$.pipe(take(1)).subscribe({
       next: user => {
         if (user) this.user = user;
