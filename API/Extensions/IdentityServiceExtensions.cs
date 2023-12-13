@@ -47,9 +47,8 @@ namespace API.Extensions
 
                             return Task.CompletedTask;
                         }
-                    }
-
-
+                    };
+                    
                 });
 
             // RequireAdminRole
