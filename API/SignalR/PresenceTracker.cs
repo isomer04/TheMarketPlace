@@ -4,7 +4,8 @@ namespace API.SignalR
     {
         private static readonly Dictionary<string, List<string>> OnlineUsers = new Dictionary<string, List<string>>();
 
-        public Task UserConnected(String username, string connectedId){
+        public Task<bool> UserConnected(String username, string connectedId){
+            bool isOnline = false;
             lock(OnlineUsers)
             {
                 if(OnlineUsers.ContainsKey(username))
@@ -13,27 +14,30 @@ namespace API.SignalR
                 }
                 else {
                     OnlineUsers.Add(username, new List<string>{connectedId});
+                    isOnline = true;
                 }
             }
 
-            return Task.CompletedTask;
+            return Task.FromResult(isOnline);
         }
 
-        public Task UserDisconnected(string username, string connectedId)
+        public Task<bool> UserDisconnected(string username, string connectedId)
         {
+            bool isOffline = false;
             lock(OnlineUsers)
             {
-                if(!OnlineUsers.ContainsKey(username)) return Task.CompletedTask;
+                if(!OnlineUsers.ContainsKey(username)) return Task.FromResult(isOffline);
 
                 OnlineUsers[username].Remove(connectedId);
 
                 if(OnlineUsers[username].Count == 0)
                 {
                     OnlineUsers.Remove(username);
+                    isOffline = true;
                 }
             }
 
-            return Task.CompletedTask;
+            return Task.FromResult(isOffline);
         }
 
         public Task<string[]> GetOnlineUsers()
