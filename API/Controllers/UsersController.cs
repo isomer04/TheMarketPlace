@@ -90,7 +90,7 @@ namespace API.Controllers
 
             user.Photos.Add(photo);
             
-            if(await _uow.Complete())) 
+            if(await _uow.Complete()) 
             {
                 return CreatedAtAction(nameof(GetUser), new{username = user.UserName}, _mapper.Map<PhotoDto> (photo));
                 
