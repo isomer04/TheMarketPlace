@@ -18,16 +18,15 @@ export class UserManagementComponent implements OnInit {
     'Member'
   ]
 
-
   constructor(private adminService: AdminService, private modalService: BsModalService) { }
 
   ngOnInit(): void {
     this.getUsersWithRoles();
   }
 
-  getUsersWithRoles(){
+  getUsersWithRoles() {
     this.adminService.getUsersWithRoles().subscribe({
-      next: users => this.users =  users
+      next: users => this.users = users
     })
   }
 
@@ -45,7 +44,7 @@ export class UserManagementComponent implements OnInit {
       next: () => {
         const selectedRoles = this.bsModalRef.content?.selectedRoles;
         if (!this.arrayEqual(selectedRoles, user.roles)) {
-          this.adminService.updateUserRoles(user.username, selectedRoles!).subscribe({
+          this.adminService.updateUserRoles(user.username, selectedRoles as string[]).subscribe({
             next: roles => user.roles = roles
           })
         }
